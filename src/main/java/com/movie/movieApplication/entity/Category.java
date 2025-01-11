@@ -54,4 +54,8 @@ public class Category {
     public void setMovies(Set<Movie> movies) {
         this.movies = movies;
     }
+
+    public Category(String name){
+        this.name=name;
+    }
 }

@@ -66,4 +66,9 @@ public class Director{
     public void setMovies(Set<Movie> movies) {
         this.movies = movies;
     }
+
+    public Director(String name,String description){
+        this.name=name;
+        this.description=description;
+    }
 }

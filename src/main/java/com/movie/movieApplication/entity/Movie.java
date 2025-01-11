@@ -136,4 +136,9 @@ public class Movie {
     public Movie(){
 
     }
+
+    public Movie(String name,String description){
+        this.name=name;
+        this.description=description;
+    }
 }

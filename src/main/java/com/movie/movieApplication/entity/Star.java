@@ -54,4 +54,8 @@ public class Star {
     public void setMovies(Set<Movie> movies) {
         this.movies = movies;
     }
+
+    public Star(String name){
+        this.name=name;
+    }
 }
