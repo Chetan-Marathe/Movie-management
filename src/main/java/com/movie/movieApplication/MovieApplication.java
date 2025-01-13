@@ -20,7 +20,7 @@ public class MovieApplication {
 	@Bean
 	public CommandLineRunner initialCreate(MovieService movieService){
 		return args -> {
-			Movie movie1 = new Movie("3 Idiots","Engineering experience is told");
+			Movie movie1 = new Movie("Three Idiots","Engineering experience is told");
 			Category category1 = new Category("Science and fun");
 			Director director1 = new Director("Rajkumar Hirani","An amazing director");
 			Star star1 = new Star("Amir khan, Kareena kappor");

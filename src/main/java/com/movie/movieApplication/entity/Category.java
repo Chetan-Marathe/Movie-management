@@ -16,7 +16,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
-    @Column(name="name",nullable = false,unique = true,length = 50)
+    @Column(name="name",length = 50)
     public String name;
 
     @ManyToMany(mappedBy = "categories",cascade = CascadeType.ALL)

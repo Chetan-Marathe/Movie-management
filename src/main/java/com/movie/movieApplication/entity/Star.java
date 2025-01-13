@@ -15,7 +15,7 @@ public class Star {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
-    @Column(name="name",unique = true,nullable = false,length = 100)
+    @Column(name="name",nullable = false,length = 100)
     public String name;
 
     @ManyToMany(mappedBy = "stars",cascade = CascadeType.ALL)

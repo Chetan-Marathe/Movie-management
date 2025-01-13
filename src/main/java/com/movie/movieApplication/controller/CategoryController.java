@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -37,4 +38,30 @@ public class CategoryController {
         model.addAttribute("categories",categoryService.FindAll());
         return "redirect:/categories";
     }
+
+    @GetMapping("/remove-category/{id}")
+    public String DeleteCategory(@PathVariable Long id,Model model){
+        categoryService.DeleteCategory(id);
+        model.addAttribute("categories",categoryService.FindAll());
+        return "categories";
+    }
+
+    @GetMapping("update-category/{id}")
+    public String UpdateCategory(@PathVariable Long id,Model model){
+        categoryService.FindaCategory(id);
+        model.addAttribute("category",categoryService.FindaCategory(id));
+        return "update-category";
+    }
+
+    @PostMapping("update-category/{id}")
+    public String SaveUpdatecategory(@PathVariable Long id, Category category,BindingResult result,Model model){
+        if(result.hasErrors()){
+            return "update-category";
+        }
+        categoryService.Updatecategory(category);
+        model.addAttribute("categories",categoryService.FindAll());
+        return "redirect:/categories";
+    }
+
+
 }
